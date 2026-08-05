@@ -124,27 +124,10 @@ export const SkillsSection: React.FC = () => {
                     </h3>
 
                     {skill.description && (
-                      <p className="text-xs text-slate-400 mb-6 font-light leading-relaxed">
+                      <p className="text-xs text-slate-400 font-light leading-relaxed">
                         {skill.description}
                       </p>
                     )}
-                  </div>
-
-                  {/* Proficiency Meter */}
-                  <div>
-                    <div className="flex justify-between items-center text-xs font-mono mb-2">
-                      <span className="text-slate-400">Proficiency</span>
-                      <span className="text-cyan-400 font-bold">{skill.level}%</span>
-                    </div>
-                    <div className="w-full h-2 bg-slate-900 rounded-full overflow-hidden border border-white/5">
-                      <motion.div
-                        initial={{ width: 0 }}
-                        whileInView={{ width: `${skill.level}%` }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 1, ease: 'easeOut' }}
-                        className="h-full bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-500 rounded-full"
-                      />
-                    </div>
                   </div>
                 </GlassCard>
               </motion.div>
