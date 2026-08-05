@@ -255,7 +255,7 @@ export const certificates: Certificate[] = [
     date: 'July 12, 2026',
     credentialId: 'INFOSYS-VLSI-2026',
     verificationUrl: 'https://verify.onwingspan.com',
-    fileUrl: '/certificates/VLSI Digital Design.pdf',
+    fileUrl: '/Portfolio/certificates/VLSI Digital Design.pdf',
     skills: [
       'Chip Design',
       'Verilog Programming',
@@ -273,7 +273,7 @@ export const certificates: Certificate[] = [
     date: 'June 22, 2026',
     credentialId: 'INFOSYS-DE-2026',
     verificationUrl: 'https://verify.onwingspan.com',
-    fileUrl: '/certificates/Digital_Electronics.pdf',
+    fileUrl: '/Portfolio/certificates/Digital_Electronics.pdf',
     skills: [
       'Digital Electronics',
       'Logic Gates',
@@ -291,7 +291,7 @@ export const certificates: Certificate[] = [
     date: 'May 31, 2026',
     credentialId: 'INFOSYS-PY-2026',
     verificationUrl: 'https://verify.onwingspan.com',
-    fileUrl: '/certificates/Basics Of Python.pdf',
+    fileUrl: '/Portfolio/certificates/Basics Of Python.pdf',
     skills: [
       'Python Basics',
       'Scripting',
@@ -309,7 +309,7 @@ export const certificates: Certificate[] = [
     date: 'April 15, 2026',
     credentialId: 'INFOSYS-C-2026',
     verificationUrl: 'https://verify.onwingspan.com',
-    fileUrl: '/certificates/Programming in C.pdf',
+    fileUrl: '/Portfolio/certificates/Programming in C.pdf',
     skills: [
       'C Programming',
       'Pointers',
@@ -327,7 +327,7 @@ export const certificates: Certificate[] = [
     date: 'March 10, 2026',
     credentialId: 'CISCO-PYESS-2026',
     verificationUrl: 'https://www.netacad.com',
-    fileUrl: '/certificates/python_essentials.pdf',
+    fileUrl: '/Portfolio/certificates/python_essentials.pdf',
     skills: [
       'Python Programming',
       'Data Preprocessing',
