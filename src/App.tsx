@@ -20,11 +20,14 @@ export const App: React.FC = () => {
   const scrollProgress = useScrollProgress();
 
   return (
-    <Router>
+    <Router basename="/Portfolio">
       {/* Loading Bitstream Preloader */}
-      {isLoading && <LoadingScreen onComplete={() => setIsLoading(false)} />}
+      {isLoading && (
+        <LoadingScreen onComplete={() => setIsLoading(false)} />
+      )}
 
       <div className="relative min-h-screen bg-[#050816] text-slate-100 font-sans selection:bg-cyan-500 selection:text-black">
+        
         {/* Scroll Progress Bar at very top */}
         <motion.div
           className="fixed top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 z-[99999] origin-left"
@@ -39,10 +42,14 @@ export const App: React.FC = () => {
         <CustomCursor />
 
         {/* Top Navbar */}
-        <Navbar onOpenCommandPalette={() => setIsCommandPaletteOpen(true)} />
+        <Navbar
+          onOpenCommandPalette={() => setIsCommandPaletteOpen(true)}
+        />
 
-        {/* Floating Dock Navigation (Bottom) */}
-        <FloatingDock onOpenCommandPalette={() => setIsCommandPaletteOpen(true)} />
+        {/* Floating Dock Navigation */}
+        <FloatingDock
+          onOpenCommandPalette={() => setIsCommandPaletteOpen(true)}
+        />
 
         {/* Main Routes */}
         <Routes>
@@ -53,11 +60,12 @@ export const App: React.FC = () => {
         {/* Footer */}
         <Footer />
 
-        {/* Interactive Features Modals & Overlay Containers */}
+        {/* Interactive Features */}
         <CommandPalette
           isOpen={isCommandPaletteOpen}
           onClose={() => setIsCommandPaletteOpen(false)}
         />
+
         <ToastContainer />
       </div>
     </Router>
