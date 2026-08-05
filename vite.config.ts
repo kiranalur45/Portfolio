@@ -4,7 +4,7 @@ import path from 'path';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  // Required for GitHub Pages project deployment
+  // GitHub Pages project deployment
   base: '/Portfolio/',
 
   plugins: [react()],
