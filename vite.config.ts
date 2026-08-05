@@ -4,12 +4,17 @@ import path from 'path';
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  // Required for GitHub Pages project deployment
+  base: '/Portfolio/',
+
   plugins: [react()],
+
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
     },
   },
+
   server: {
     port: 3000,
     open: true,
