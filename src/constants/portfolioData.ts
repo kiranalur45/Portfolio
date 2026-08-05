@@ -250,11 +250,12 @@ export const experiences: ExperienceItem[] = [
 export const certificates: Certificate[] = [
   {
     id: 'cert-vlsi-digital-design',
-@@ -256,9 +7,16 @@ export const certificates: Certificate[] = [
+    title: 'VLSI Digital Design',
+    issuer: 'Infosys Springboard',
+    date: 'July 12, 2026',
     credentialId: 'INFOSYS-VLSI-2026',
     verificationUrl: 'https://verify.onwingspan.com',
     fileUrl: '/certificates/VLSI Digital Design.pdf',
-    skills: ['Chip Design', 'Verilog Programming', 'RTL Design', 'Digital Logic', 'VLSI Architecture'],
     skills: [
       'Chip Design',
       'Verilog Programming',
@@ -268,11 +269,11 @@ export const certificates: Certificate[] = [
   {
     id: 'cert-digital-electronics',
     title: 'Digital Electronics',
-@@ -267,9 +25,16 @@ export const certificates: Certificate[] = [
+    issuer: 'Infosys Springboard',
+    date: 'June 22, 2026',
     credentialId: 'INFOSYS-DE-2026',
     verificationUrl: 'https://verify.onwingspan.com',
     fileUrl: '/certificates/Digital_Electronics.pdf',
-    skills: ['Digital Electronics', 'Logic Gates', 'Combinational Circuits', 'Sequential Logic', 'FSM'],
     skills: [
       'Digital Electronics',
       'Logic Gates',
@@ -286,11 +287,11 @@ export const certificates: Certificate[] = [
   {
     id: 'cert-basics-of-python',
     title: 'Basics Of Python',
-@@ -278,9 +43,16 @@ export const certificates: Certificate[] = [
+    issuer: 'Infosys Springboard',
+    date: 'May 31, 2026',
     credentialId: 'INFOSYS-PY-2026',
     verificationUrl: 'https://verify.onwingspan.com',
     fileUrl: '/certificates/Basics Of Python.pdf',
-    skills: ['Python Basics', 'Scripting', 'VLSI Systems', 'Data Structures', 'Hardware Modeling'],
     skills: [
       'Python Basics',
       'Scripting',
@@ -304,11 +305,11 @@ export const certificates: Certificate[] = [
   {
     id: 'cert-programming-in-c',
     title: 'Programming in C',
-@@ -289,9 +61,16 @@ export const certificates: Certificate[] = [
+    issuer: 'Infosys Springboard',
+    date: 'April 15, 2026',
     credentialId: 'INFOSYS-C-2026',
     verificationUrl: 'https://verify.onwingspan.com',
     fileUrl: '/certificates/Programming in C.pdf',
-    skills: ['C Programming', 'Pointers', 'Memory Management', 'Data Structures', 'Embedded C'],
     skills: [
       'C Programming',
       'Pointers',
@@ -322,11 +323,11 @@ export const certificates: Certificate[] = [
   {
     id: 'cert-python-essentials',
     title: 'Python Essentials',
-@@ -300,40 +79,12 @@ export const certificates: Certificate[] = [
+    issuer: 'Cisco Networking Academy',
+    date: 'March 10, 2026',
     credentialId: 'CISCO-PYESS-2026',
     verificationUrl: 'https://www.netacad.com',
     fileUrl: '/certificates/python_essentials.pdf',
-    skills: ['Python Programming', 'Data Preprocessing', 'Object-Oriented Programming', 'Scripting & AI Tools'],
     skills: [
       'Python Programming',
       'Data Preprocessing',
@@ -345,9 +346,11 @@ export const achievements: Achievement[] = [
     date: '2024',
     position: '1st Place',
     category: 'Hackathon',
-    description: 'Awarded 1st place for designing and synthesizing the FPGA-Based Moving Object Detection system with 60 FPS real-time VGA output.',
+    description:
+      'Awarded 1st place for designing and synthesizing the FPGA-Based Moving Object Detection system with 60 FPS real-time VGA output.',
     stats: '1st / 45 Teams'
   },
+
   {
     id: 'ach-vtu-academic',
     title: 'Academic Excellence in Digital System Design',
@@ -355,9 +358,11 @@ export const achievements: Achievement[] = [
     date: '2023–2024',
     position: 'Merit List',
     category: 'Award',
-    description: 'Recognized for outstanding academic performance and high distinction in Verilog HDL, Microcontrollers, and Digital Signal Processing.',
+    description:
+      'Recognized for outstanding academic performance and high distinction in Verilog HDL, Microcontrollers, and Digital Signal Processing.',
     stats: 'Top Percentile'
   },
+
   {
     id: 'ach-iot-air-mouse',
     title: 'Best Embedded IoT Prototype',
@@ -365,7 +370,8 @@ export const achievements: Achievement[] = [
     date: '2024',
     position: 'Finalist & Special Mention',
     category: 'Competition',
-    description: 'Demonstrated the ESP32 BLE HID Air Mouse with sub-15ms gesture responsiveness, earning praise from industry judges.',
+    description:
+      'Demonstrated the ESP32 BLE HID Air Mouse with sub-15ms gesture responsiveness, earning praise from industry judges.',
     stats: 'Top 5 Finalist'
   }
 ];
