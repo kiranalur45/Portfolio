@@ -231,19 +231,18 @@ endmodule`
 
 export const experiences: ExperienceItem[] = [
   {
-    id: 'ece-lab-research',
-    role: 'FPGA & Embedded Systems Student Researcher',
-    organization: 'SDM College of Engineering and Technology (SDMCET), Dharwad',
-    period: '2024 – Present',
-    location: 'Dharwad, Karnataka',
-    type: 'Research',
+    id: 'crofting-technologies-intern',
+    role: 'Summer Intern',
+    organization: 'Crofting Technologies',
+    period: '22 June – August',
+    location: 'India',
+    type: 'Internship',
     icon: 'Cpu',
     description: [
-      'Synthesized and tested custom Verilog RTL modules on Xilinx Artix-7/Spartan-6 FPGA boards.',
-      'Designed hardware testbenches in QuestaSim to verify timing compliance and state machine transitions.',
-      'Integrated sensor arrays with microcontrollers over I2C, SPI, and UART protocols for real-time telemetry.'
+      'Designed and implemented a Verilog HDL-based RISC-V processor integrated with an Ethernet communication interface, performing RTL development, functional simulation, debugging, and FPGA validation using Xilinx Vivado and Vitis Model Composer. Achieved 84% code coverage for the Ethernet module using ModelSim/QuestaSim.',
+      'Developing an FPGA-based object detection system by implementing image processing algorithms, validating them using MATLAB/Simulink, optimizing RTL, and resolving hardware integration issues. Achieved 93% detection accuracy and 78% precision during system evaluation.'
     ],
-    skillsUsed: ['Verilog HDL', 'FPGA', 'Vivado', 'QuestaSim', 'Embedded Systems']
+    skillsUsed: ['Verilog HDL', 'FPGA', 'RISC-V', 'Xilinx Vivado', 'Vitis Model Composer', 'MATLAB/Simulink', 'QuestaSim']
   }
 ];
 
