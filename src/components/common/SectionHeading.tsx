@@ -24,31 +24,31 @@ export const SectionHeading: React.FC<SectionHeadingProps> = ({
     >
       {/* Category Badge */}
       <div
-        className={`inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xs font-mono tracking-wider uppercase mb-4 shadow-[0_0_15px_rgba(6,182,212,0.15)] ${
+        className={`inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#F1F5F9] border border-[#CBD5E1] text-[#0F766E] text-xs font-mono font-bold tracking-wider uppercase mb-4 shadow-2xs ${
           centered ? 'mx-auto' : ''
         }`}
       >
-        <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
+        <span className="w-1.5 h-1.5 rounded-full bg-[#0F766E]" />
         {badge}
       </div>
 
-      {/* Main Title with Gradient Glow */}
-      <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-display text-white tracking-tight leading-tight">
+      {/* Main Title */}
+      <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold font-display text-[#0F172A] tracking-tight leading-tight">
         {title}
       </h2>
 
       {/* Subtitle */}
       {subtitle && (
-        <p className="mt-4 text-base sm:text-lg text-slate-400 max-w-2xl font-light leading-relaxed mx-auto">
+        <p className="mt-4 text-base sm:text-lg text-[#334155] max-w-2xl font-normal leading-relaxed mx-auto">
           {subtitle}
         </p>
       )}
 
       {/* Animated Divider */}
       <div className={`mt-6 flex items-center gap-2 ${centered ? 'justify-center' : 'justify-start'}`}>
-        <div className="h-[2px] w-12 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full" />
-        <div className="w-2 h-2 rounded-full bg-cyan-400 shadow-[0_0_8px_#00f0ff]" />
-        <div className="h-[2px] w-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full" />
+        <div className="h-[1px] w-12 bg-[#CBD5E1] rounded-full" />
+        <div className="w-1.5 h-1.5 rounded-full bg-[#0F766E]" />
+        <div className="h-[1px] w-12 bg-[#CBD5E1] rounded-full" />
       </div>
     </motion.div>
   );
