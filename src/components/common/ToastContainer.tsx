@@ -20,32 +20,32 @@ export const ToastContainer: React.FC = () => {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 10, scale: 0.9 }}
             transition={{ duration: 0.2 }}
-            className="pointer-events-auto glass-panel p-4 rounded-xl border border-white/10 shadow-2xl flex items-start gap-3 relative overflow-hidden group"
+            className="pointer-events-auto bg-white p-4 rounded-xl border border-[#CBD5E1] shadow-lg flex items-start gap-3 relative overflow-hidden group"
           >
             <div className="mt-0.5 shrink-0">
-              {toast.type === 'success' && <CheckCircle2 className="w-5 h-5 text-cyan-400" />}
-              {toast.type === 'info' && <Info className="w-5 h-5 text-blue-400" />}
-              {toast.type === 'warning' && <AlertCircle className="w-5 h-5 text-amber-400" />}
-              {toast.type === 'error' && <XCircle className="w-5 h-5 text-red-400" />}
+              {toast.type === 'success' && <CheckCircle2 className="w-5 h-5 text-[#0F766E]" />}
+              {toast.type === 'info' && <Info className="w-5 h-5 text-[#0F766E]" />}
+              {toast.type === 'warning' && <AlertCircle className="w-5 h-5 text-amber-600" />}
+              {toast.type === 'error' && <XCircle className="w-5 h-5 text-red-600" />}
             </div>
 
             <div className="flex-1 min-w-0 pr-4">
-              <h4 className="text-sm font-semibold text-white tracking-wide">{toast.title}</h4>
-              <p className="text-xs text-slate-300 mt-0.5 leading-relaxed">{toast.message}</p>
+              <h4 className="text-sm font-bold text-[#0F172A] tracking-wide">{toast.title}</h4>
+              <p className="text-xs text-[#334155] font-medium mt-0.5 leading-relaxed">{toast.message}</p>
             </div>
 
             <button
               onClick={() => removeToast(toast.id)}
-              className="text-slate-400 hover:text-white transition-colors p-1 rounded-lg hover:bg-white/5"
+              className="text-[#64748B] hover:text-[#0F172A] transition-colors p-1 rounded-lg hover:bg-[#F1F5F9]"
             >
               <X className="w-4 h-4" />
             </button>
 
-            {/* Glowing accent border line */}
+            {/* Accent border line */}
             <div className={`absolute bottom-0 left-0 right-0 h-[2px] ${
-              toast.type === 'success' ? 'bg-cyan-400' :
-              toast.type === 'info' ? 'bg-blue-400' :
-              toast.type === 'warning' ? 'bg-amber-400' : 'bg-red-400'
+              toast.type === 'success' ? 'bg-[#0F766E]' :
+              toast.type === 'info' ? 'bg-[#0F766E]' :
+              toast.type === 'warning' ? 'bg-amber-600' : 'bg-red-600'
             }`} />
           </motion.div>
         ))}
