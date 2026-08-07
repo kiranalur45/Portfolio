@@ -6,12 +6,8 @@ import {
   User,
   Cpu,
   FolderGit2,
-  Briefcase,
   Award,
-  Trophy,
-  FileText,
   Mail,
-  Download,
   Copy,
   Github,
   Linkedin,
@@ -91,9 +87,6 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({ isOpen, onClose 
       if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
         e.preventDefault();
         if (isOpen) onClose();
-        else {
-          // Open handled by parent or shortcut
-        }
       }
 
       if (!isOpen) return;
@@ -122,17 +115,17 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({ isOpen, onClose 
 
   return (
     <AnimatePresence>
-      <div className="fixed inset-0 z-[10000] flex items-start justify-center pt-20 sm:pt-28 px-4 bg-black/70 backdrop-blur-md">
+      <div className="fixed inset-0 z-[10000] flex items-start justify-center pt-20 sm:pt-28 px-4 bg-black/40 backdrop-blur-md">
         <motion.div
           initial={{ opacity: 0, scale: 0.95, y: -20 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.95, y: -20 }}
           transition={{ duration: 0.2 }}
-          className="w-full max-w-xl bg-[#0b1026] border border-cyan-500/30 rounded-2xl shadow-[0_0_50px_rgba(6,182,212,0.25)] overflow-hidden"
+          className="w-full max-w-xl bg-white border border-[#CBD5E1] rounded-2xl shadow-2xl overflow-hidden"
         >
           {/* Header Search Bar */}
-          <div className="p-4 border-b border-white/10 flex items-center gap-3">
-            <Search className="w-5 h-5 text-cyan-400 shrink-0" />
+          <div className="p-4 border-b border-[#CBD5E1] flex items-center gap-3">
+            <Search className="w-5 h-5 text-[#0F766E] shrink-0" />
             <input
               type="text"
               autoFocus
@@ -142,11 +135,11 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({ isOpen, onClose 
                 setQuery(e.target.value);
                 setSelectedIndex(0);
               }}
-              className="w-full bg-transparent text-white placeholder-slate-400 focus:outline-none text-sm font-medium"
+              className="w-full bg-transparent text-[#0F172A] placeholder-[#64748B] focus:outline-none text-sm font-semibold"
             />
             <button
               onClick={onClose}
-              className="p-1 rounded-lg text-slate-400 hover:text-white hover:bg-white/10 transition-colors"
+              className="p-1 rounded-lg text-[#334155] hover:text-[#0F172A] hover:bg-[#F1F5F9] transition-colors"
             >
               <X className="w-4 h-4" />
             </button>
@@ -155,7 +148,7 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({ isOpen, onClose 
           {/* Commands List */}
           <div className="max-h-80 overflow-y-auto p-2">
             {filteredCommands.length === 0 ? (
-              <div className="py-8 text-center text-slate-400 text-sm">
+              <div className="py-8 text-center text-[#64748B] text-sm font-medium">
                 No matching results found for "{query}".
               </div>
             ) : (
@@ -169,16 +162,16 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({ isOpen, onClose 
                     onMouseEnter={() => setSelectedIndex(idx)}
                     className={`w-full flex items-center justify-between px-4 py-3 rounded-xl text-sm transition-all text-left ${
                       isSelected
-                        ? 'bg-cyan-500/20 border border-cyan-500/40 text-cyan-300 shadow-[0_0_15px_rgba(6,182,212,0.2)]'
-                        : 'text-slate-300 hover:bg-white/5 border border-transparent'
+                        ? 'bg-[#F1F5F9] border border-[#CBD5E1] text-[#0F172A] font-bold shadow-2xs'
+                        : 'text-[#334155] font-semibold hover:bg-[#F1F5F9] border border-transparent'
                     }`}
                   >
                     <div className="flex items-center gap-3">
-                      <Icon className={`w-4 h-4 ${isSelected ? 'text-cyan-400' : 'text-slate-400'}`} />
-                      <span className="font-medium">{cmd.label}</span>
+                      <Icon className={`w-4 h-4 ${isSelected ? 'text-[#0F766E]' : 'text-[#334155]'}`} />
+                      <span>{cmd.label}</span>
                     </div>
                     {isSelected && (
-                      <span className="text-xs text-cyan-400 font-mono">Press ↵</span>
+                      <span className="text-xs text-[#0F766E] font-mono font-bold">Press ↵</span>
                     )}
                   </button>
                 );
@@ -187,13 +180,13 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({ isOpen, onClose 
           </div>
 
           {/* Command Footer Shortcuts */}
-          <div className="p-3 bg-slate-950/60 border-t border-white/5 flex items-center justify-between text-[11px] text-slate-500 font-mono">
+          <div className="p-3 bg-[#F1F5F9] border-t border-[#CBD5E1] flex items-center justify-between text-[11px] text-[#64748B] font-mono font-semibold">
             <div className="flex items-center gap-3">
               <span>↑↓ Navigate</span>
               <span>↵ Select</span>
               <span>Esc Close</span>
             </div>
-            <span className="text-cyan-400/70">Kiran Alur Portfolio</span>
+            <span className="text-[#0F766E] font-bold">Kiran Alur Portfolio</span>
           </div>
         </motion.div>
       </div>
