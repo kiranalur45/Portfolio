@@ -21,20 +21,20 @@ export const App: React.FC = () => {
 
   return (
     <Router basename="/Portfolio">
-      {/* Loading Bitstream Preloader */}
+      {/* Loading Preloader */}
       {isLoading && (
         <LoadingScreen onComplete={() => setIsLoading(false)} />
       )}
 
-      <div className="relative min-h-screen bg-[#050816] text-slate-100 font-sans selection:bg-cyan-500 selection:text-black">
+      <div className="relative min-h-screen bg-[#F8FAFC] text-[#0F172A] font-sans selection:bg-[#0F766E] selection:text-white">
         
         {/* Scroll Progress Bar at very top */}
         <motion.div
-          className="fixed top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 z-[99999] origin-left"
+          className="fixed top-0 left-0 right-0 h-[2px] bg-[#0F766E] z-[99999] origin-left"
           style={{ scaleX: scrollProgress / 100 }}
         />
 
-        {/* Global Ambient Background Mesh & Cyber Grid */}
+        {/* Global Ambient Background Mesh */}
         <BackgroundMesh />
 
         {/* Custom Mouse Spotlight Glow & Precision Cursor */}
