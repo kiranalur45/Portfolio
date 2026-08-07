@@ -8,7 +8,7 @@ import profileImg from '../assets/images/profile.jpeg';
 
 export const AboutSection: React.FC = () => {
   return (
-    <section id="about" className="py-24 relative z-10">
+    <section id="about" className="py-24 relative z-10 bg-[#F1F5F9]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
           badge="Professional Overview"
@@ -26,12 +26,12 @@ export const AboutSection: React.FC = () => {
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1, duration: 0.4 }}
             >
-              <GlassCard glowColor="cyan" className="text-center p-6 h-full flex flex-col justify-center items-center shadow-md">
-                <div className="text-4xl sm:text-5xl font-extrabold font-display text-[#F1EEE5]">
+              <GlassCard className="text-center p-6 h-full flex flex-col justify-center items-center bg-white border border-[#CBD5E1] shadow-card">
+                <div className="text-4xl sm:text-5xl font-extrabold font-display text-[#0F172A]">
                   {stat.value}{stat.suffix}
                 </div>
-                <div className="text-xs font-mono font-bold text-[#C47A52] mt-2 tracking-wide uppercase">{stat.label}</div>
-                <div className="text-xs text-[#A9A69D] mt-1 font-light leading-relaxed">{stat.description}</div>
+                <div className="text-xs font-mono font-bold text-[#0F766E] mt-2 tracking-wide uppercase">{stat.label}</div>
+                <div className="text-xs text-[#334155] mt-1 font-medium leading-relaxed">{stat.description}</div>
               </GlassCard>
             </motion.div>
           ))}
@@ -45,31 +45,31 @@ export const AboutSection: React.FC = () => {
           transition={{ duration: 0.5 }}
           className="mb-8 max-w-6xl mx-auto"
         >
-          <GlassCard glowColor="blue" className="p-8">
+          <GlassCard className="p-8 bg-white border border-[#CBD5E1] shadow-card">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
               {/* Education Side */}
-              <div className="lg:col-span-6 space-y-3 lg:border-r lg:border-[#3A3B37] lg:pr-8">
-                <div className="flex items-center gap-4 text-[#F1EEE5]">
-                  <div className="w-14 h-14 rounded-2xl border border-[#3A3B37] p-0.5 overflow-hidden shrink-0 shadow-sm bg-[#20211F]">
+              <div className="lg:col-span-6 space-y-3 lg:border-r lg:border-[#CBD5E1] lg:pr-8">
+                <div className="flex items-center gap-4 text-[#0F172A]">
+                  <div className="w-14 h-14 rounded-2xl border border-[#CBD5E1] p-0.5 overflow-hidden shrink-0 bg-[#F1F5F9] shadow-2xs">
                     <img src={profileImg} alt={personalInfo.name} className="w-full h-full object-cover rounded-xl" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-[#F1EEE5] font-display">Academic Education</h3>
-                    <p className="text-xs font-mono text-[#C47A52]">Undergraduate Degree Program</p>
+                    <h3 className="text-xl font-bold text-[#0F172A] font-display">Academic Education</h3>
+                    <p className="text-xs font-mono font-bold text-[#0F766E]">Undergraduate Degree Program</p>
                   </div>
                 </div>
 
                 <div className="pt-2 space-y-1.5">
-                  <h4 className="text-lg font-semibold text-[#F1EEE5]">
+                  <h4 className="text-lg font-bold text-[#0F172A]">
                     {personalInfo.stream}
                   </h4>
-                  <p className="text-sm text-[#C47A52] font-medium flex items-center gap-2">
-                    <MapPin className="w-4 h-4 text-[#C47A52] shrink-0" />
+                  <p className="text-sm text-[#0F766E] font-bold flex items-center gap-2">
+                    <MapPin className="w-4 h-4 text-[#0F766E] shrink-0" />
                     {personalInfo.college}
                   </p>
-                  <div className="flex flex-wrap items-center justify-between text-xs text-[#A9A69D] font-mono pt-1">
-                    <span>University: {personalInfo.university}</span>
-                    <span className="px-2.5 py-0.5 rounded-full bg-[#20211F] text-[#F1EEE5] border border-[#3A3B37] font-semibold">
+                  <div className="flex flex-wrap items-center justify-between text-xs text-[#334155] font-mono pt-1">
+                    <span className="font-semibold">University: {personalInfo.university}</span>
+                    <span className="px-2.5 py-0.5 rounded-full bg-[#F1F5F9] text-[#0F172A] border border-[#CBD5E1] font-bold">
                       {personalInfo.graduationYears}
                     </span>
                   </div>
@@ -78,14 +78,14 @@ export const AboutSection: React.FC = () => {
 
               {/* Career Objective Side */}
               <div className="lg:col-span-6 space-y-3">
-                <div className="flex items-center gap-3 text-[#F1EEE5]">
-                  <div className="p-2.5 rounded-xl bg-[#20211F] border border-[#3A3B37] text-[#C47A52]">
+                <div className="flex items-center gap-3 text-[#0F172A]">
+                  <div className="p-2.5 rounded-xl bg-[#F1F5F9] border border-[#CBD5E1] text-[#0F766E]">
                     <Target className="w-6 h-6" />
                   </div>
-                  <h3 className="text-xl font-bold text-[#F1EEE5] font-display">Career Objective</h3>
+                  <h3 className="text-xl font-bold text-[#0F172A] font-display">Career Objective</h3>
                 </div>
 
-                <p className="text-sm text-[#A9A69D] leading-relaxed font-light pt-1">
+                <p className="text-sm text-[#334155] leading-relaxed font-normal pt-1">
                   {personalInfo.careerObjective}
                 </p>
               </div>
@@ -104,25 +104,25 @@ export const AboutSection: React.FC = () => {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="h-full"
           >
-            <GlassCard glowColor="purple" className="h-full p-8 flex flex-col justify-between space-y-4">
+            <GlassCard className="h-full p-8 flex flex-col justify-between space-y-4 bg-white border border-[#CBD5E1] shadow-card">
               <div className="space-y-4">
-                <div className="flex items-center gap-3 text-[#F1EEE5]">
-                  <div className="p-2.5 rounded-xl bg-[#20211F] border border-[#3A3B37] text-[#C47A52]">
+                <div className="flex items-center gap-3 text-[#0F172A]">
+                  <div className="p-2.5 rounded-xl bg-[#F1F5F9] border border-[#CBD5E1] text-[#0F766E]">
                     <Compass className="w-6 h-6" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-[#F1EEE5] font-display">Engineering Journey</h3>
-                    <p className="text-xs font-mono text-[#C47A52]">Silicon to Embedded Firmware</p>
+                    <h3 className="text-xl font-bold text-[#0F172A] font-display">Engineering Journey</h3>
+                    <p className="text-xs font-mono font-bold text-[#0F766E]">Silicon to Embedded Firmware</p>
                   </div>
                 </div>
 
-                <p className="text-sm text-[#A9A69D] leading-relaxed font-light">
+                <p className="text-sm text-[#334155] leading-relaxed font-normal">
                   {personalInfo.journey}
                 </p>
               </div>
 
-              <div className="pt-4 border-t border-[#3A3B37] flex items-center gap-2 text-xs font-mono text-[#F1EEE5]">
-                <CheckCircle2 className="w-4 h-4 text-[#C47A52]" />
+              <div className="pt-4 border-t border-[#CBD5E1] flex items-center gap-2 text-xs font-mono font-bold text-[#0F172A]">
+                <CheckCircle2 className="w-4 h-4 text-[#0F766E]" />
                 <span>Deterministic RTL & Low-Power Hardware Focus</span>
               </div>
             </GlassCard>
@@ -137,19 +137,19 @@ export const AboutSection: React.FC = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
-              <GlassCard glowColor="purple" className="p-6 space-y-4">
-                <div className="flex items-center gap-3 text-[#F1EEE5]">
-                  <div className="p-2 rounded-xl bg-[#20211F] border border-[#3A3B37] text-[#C47A52]">
+              <GlassCard className="p-6 space-y-4 bg-white border border-[#CBD5E1] shadow-card">
+                <div className="flex items-center gap-3 text-[#0F172A]">
+                  <div className="p-2 rounded-xl bg-[#F1F5F9] border border-[#CBD5E1] text-[#0F766E]">
                     <Sparkles className="w-5 h-5" />
                   </div>
-                  <h3 className="text-lg font-bold text-[#F1EEE5] font-display">Areas of Specialization</h3>
+                  <h3 className="text-lg font-bold text-[#0F172A] font-display">Areas of Specialization</h3>
                 </div>
 
                 <div className="flex flex-wrap gap-2 pt-1">
                   {personalInfo.areasOfInterest.map((interest) => (
                     <span
                       key={interest}
-                      className="px-3 py-1.5 rounded-xl bg-[#20211F] border border-[#3A3B37] text-[#F1EEE5] text-xs font-mono"
+                      className="px-3 py-1.5 rounded-xl bg-[#F1F5F9] border border-[#CBD5E1] text-[#334155] text-xs font-mono font-bold"
                     >
                       {interest}
                     </span>
@@ -165,18 +165,18 @@ export const AboutSection: React.FC = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.3 }}
             >
-              <GlassCard glowColor="gold" className="p-6 space-y-4">
-                <div className="flex items-center gap-3 text-[#F1EEE5]">
-                  <div className="p-2 rounded-xl bg-[#20211F] border border-[#3A3B37] text-[#C47A52]">
+              <GlassCard className="p-6 space-y-4 bg-white border border-[#CBD5E1] shadow-card">
+                <div className="flex items-center gap-3 text-[#0F172A]">
+                  <div className="p-2 rounded-xl bg-[#F1F5F9] border border-[#CBD5E1] text-[#0F766E]">
                     <GraduationCap className="w-5 h-5" />
                   </div>
-                  <h3 className="text-lg font-bold text-[#F1EEE5] font-display">Future Goals</h3>
+                  <h3 className="text-lg font-bold text-[#0F172A] font-display">Future Goals</h3>
                 </div>
 
-                <ul className="space-y-2 text-xs font-mono text-[#A9A69D]">
+                <ul className="space-y-2 text-xs font-mono text-[#334155]">
                   {personalInfo.futureGoals.map((goal, idx) => (
-                    <li key={idx} className="flex items-center gap-2">
-                      <span className="text-[#C47A52] font-bold">›</span>
+                    <li key={idx} className="flex items-center gap-2 font-medium">
+                      <span className="text-[#0F766E] font-bold">›</span>
                       <span>{goal}</span>
                     </li>
                   ))}
