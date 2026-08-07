@@ -13,15 +13,15 @@ export const ProjectsSection: React.FC = () => {
 
   const getProjectIcon = (id: string) => {
     switch (id) {
-      case 'fpga-moving-object-detection': return <Cpu className="w-8 h-8 text-[#F1EEE5]" />;
-      case 'esp32-air-mouse': return <Radio className="w-8 h-8 text-[#F1EEE5]" />;
-      case 'women-safety-system': return <Layers className="w-8 h-8 text-[#F1EEE5]" />;
-      default: return <Cpu className="w-8 h-8 text-[#F1EEE5]" />;
+      case 'fpga-moving-object-detection': return <Cpu className="w-8 h-8 text-[#0F766E]" />;
+      case 'esp32-air-mouse': return <Radio className="w-8 h-8 text-[#0F766E]" />;
+      case 'women-safety-system': return <Layers className="w-8 h-8 text-[#0F766E]" />;
+      default: return <Cpu className="w-8 h-8 text-[#0F766E]" />;
     }
   };
 
   return (
-    <section id="projects" className="py-24 relative z-10">
+    <section id="projects" className="py-24 relative z-10 bg-[#F1F5F9]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
           badge="Featured Engineering Works"
@@ -39,39 +39,39 @@ export const ProjectsSection: React.FC = () => {
               viewport={{ once: true }}
               transition={{ delay: idx * 0.15, duration: 0.5 }}
             >
-              <GlassCard glowColor="cyan" className="h-full flex flex-col justify-between p-6">
+              <GlassCard className="h-full flex flex-col justify-between p-6 bg-white border border-[#CBD5E1] shadow-card">
                 <div>
                   {/* Card Banner Graphic Box */}
-                  <div className="w-full h-44 rounded-xl bg-[#20211F] border border-[#3A3B37] flex flex-col items-center justify-center mb-6 relative overflow-hidden group">
-                    <div className="absolute inset-0 bg-cyber-grid opacity-30 pointer-events-none" />
-                    <div className="p-4 rounded-2xl bg-[#292A27] border border-[#3A3B37] shadow-sm group-hover:scale-105 transition-transform duration-300">
+                  <div className="w-full h-44 rounded-xl bg-[#F8FAFC] border border-[#CBD5E1] flex flex-col items-center justify-center mb-6 relative overflow-hidden group shadow-2xs">
+                    <div className="absolute inset-0 bg-grid-pattern opacity-30 pointer-events-none" />
+                    <div className="p-4 rounded-2xl bg-white border border-[#CBD5E1] group-hover:scale-105 transition-transform duration-300 shadow-2xs">
                       {getProjectIcon(project.id)}
                     </div>
-                    <span className="text-[11px] font-mono text-[#C47A52] mt-3 font-semibold uppercase tracking-wider">
+                    <span className="text-[11px] font-mono text-[#0F766E] mt-3 font-bold uppercase tracking-wider">
                       {project.category}
                     </span>
-                    <span className="absolute top-3 right-4 text-xs font-mono font-bold text-[#C47A52]">
+                    <span className="absolute top-3 right-4 text-xs font-mono font-extrabold text-[#94A3B8]">
                       0{idx + 1}
                     </span>
                   </div>
 
                   {/* Title & Subtitle */}
-                  <h3 className="text-xl font-bold font-display text-[#F1EEE5] mb-1">
+                  <h3 className="text-xl font-bold font-display text-[#0F172A] mb-1">
                     {project.title}
                   </h3>
-                  <p className="text-xs font-mono text-[#C47A52] mb-4">{project.subtitle}</p>
+                  <p className="text-xs font-mono font-bold text-[#0F766E] mb-4">{project.subtitle}</p>
 
                   {/* Description */}
-                  <p className="text-xs text-[#A9A69D] font-light leading-relaxed mb-6">
+                  <p className="text-xs text-[#334155] font-normal leading-relaxed mb-6">
                     {project.description}
                   </p>
 
                   {/* Technical Highlights Preview */}
                   <div className="space-y-1.5 mb-6">
                     {project.highlights.slice(0, 3).map((h, i) => (
-                      <div key={i} className="flex items-center gap-2 text-[11px] text-[#A9A69D] font-mono">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-[#C47A52] shrink-0" />
-                        <span className="truncate text-[#F1EEE5]">{h}</span>
+                      <div key={i} className="flex items-center gap-2 text-[11px] text-[#334155] font-mono">
+                        <CheckCircle2 className="w-3.5 h-3.5 text-[#0F766E] shrink-0" />
+                        <span className="truncate text-[#0F172A] font-semibold">{h}</span>
                       </div>
                     ))}
                   </div>
@@ -79,10 +79,10 @@ export const ProjectsSection: React.FC = () => {
                   {/* Technology Badges */}
                   <div className="flex flex-wrap gap-1.5 mb-6">
                     {project.technologies.slice(0, 4).map((tech) => (
-                      <TechBadge key={tech} name={tech} variant="cyan" />
+                      <TechBadge key={tech} name={tech} />
                     ))}
                     {project.technologies.length > 4 && (
-                      <span className="px-2 py-0.5 rounded text-[10px] font-mono text-[#A9A69D] bg-[#20211F] border border-[#3A3B37]">
+                      <span className="px-2 py-0.5 rounded text-[10px] font-mono text-[#64748B] bg-[#F1F5F9] border border-[#CBD5E1] font-semibold">
                         +{project.technologies.length - 4} more
                       </span>
                     )}
@@ -90,10 +90,10 @@ export const ProjectsSection: React.FC = () => {
                 </div>
 
                 {/* Card Action CTAs */}
-                <div className="pt-4 border-t border-[#3A3B37] flex items-center justify-between gap-2">
+                <div className="pt-4 border-t border-[#CBD5E1] flex items-center justify-between gap-2">
                   <button
                     onClick={() => setSelectedProject(project)}
-                    className="flex items-center gap-1.5 text-xs font-bold text-[#C47A52] hover:text-[#F1EEE5] font-mono group"
+                    className="flex items-center gap-1.5 text-xs font-bold text-[#0F766E] hover:text-[#0D9488] font-mono group"
                   >
                     <span>View Details</span>
                     <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
@@ -104,7 +104,7 @@ export const ProjectsSection: React.FC = () => {
                       <button
                         type="button"
                         onClick={(e) => e.preventDefault()}
-                        className="p-2 rounded-lg bg-[#20211F] border border-[#3A3B37] text-[#F1EEE5] cursor-pointer hover:border-[#C47A52] transition-all"
+                        className="p-2 rounded-lg bg-white border border-[#CBD5E1] text-[#0F172A] cursor-pointer hover:border-[#0F766E] hover:text-[#0F766E] transition-all shadow-2xs"
                         title="View Repository (Functionless)"
                       >
                         <Github className="w-4 h-4" />
@@ -114,7 +114,7 @@ export const ProjectsSection: React.FC = () => {
                       <button
                         type="button"
                         onClick={(e) => e.preventDefault()}
-                        className="p-2 rounded-lg bg-[#20211F] border border-[#3A3B37] text-[#F1EEE5] cursor-pointer hover:border-[#C47A52] transition-all"
+                        className="p-2 rounded-lg bg-white border border-[#CBD5E1] text-[#0F172A] cursor-pointer hover:border-[#0F766E] hover:text-[#0F766E] transition-all shadow-2xs"
                         title="Live Demo (Functionless)"
                       >
                         <ExternalLink className="w-4 h-4" />
