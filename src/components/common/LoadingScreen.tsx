@@ -49,54 +49,53 @@ export const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
         initial={{ opacity: 1 }}
         exit={{ opacity: 0, scale: 1.05 }}
         transition={{ duration: 0.6, ease: 'easeInOut' }}
-        className="fixed inset-0 z-[10000] bg-[#050816] flex flex-col items-center justify-center overflow-hidden font-mono px-4"
+        className="fixed inset-0 z-[10000] bg-[#F8FAFC] flex flex-col items-center justify-center overflow-hidden font-mono px-4"
       >
-        {/* Glowing Background Mesh */}
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(6,182,212,0.12)_0,transparent_70%)] pointer-events-none" />
-        <div className="absolute inset-0 bg-cyber-grid opacity-15 pointer-events-none" />
+        {/* Ambient Grid Overlay */}
+        <div className="absolute inset-0 bg-grid-pattern opacity-30 pointer-events-none" />
 
-        {/* Central Glowing Microchip Logo */}
+        {/* Central Microchip Logo */}
         <motion.div
-          animate={{ scale: [1, 1.08, 1], rotate: [0, 180, 360] }}
+          animate={{ scale: [1, 1.05, 1], rotate: [0, 180, 360] }}
           transition={{ duration: 12, repeat: Infinity, ease: 'linear' }}
           className="relative mb-8"
         >
-          <div className="w-24 h-24 rounded-2xl bg-slate-900/80 border border-cyan-500/40 backdrop-blur-xl flex items-center justify-center shadow-[0_0_50px_rgba(6,182,212,0.3)]">
-            <Cpu className="w-12 h-12 text-cyan-400" />
+          <div className="w-24 h-24 rounded-2xl bg-white border border-[#CBD5E1] flex items-center justify-center shadow-card">
+            <Cpu className="w-12 h-12 text-[#0F766E]" />
           </div>
-          <div className="absolute -inset-2 rounded-2xl border border-cyan-400/20 border-dashed animate-spin-slow pointer-events-none" />
+          <div className="absolute -inset-2 rounded-2xl border border-[#CBD5E1] border-dashed animate-spin-slow pointer-events-none" />
         </motion.div>
 
         {/* Brand Name */}
-        <h2 className="text-xl font-bold tracking-wider text-white flex items-center gap-2 font-display mb-1">
+        <h2 className="text-xl font-extrabold tracking-wider text-[#0F172A] flex items-center gap-2 font-display mb-1">
           KIRAN YAMANAPPA ALUR
         </h2>
-        <p className="text-xs text-cyan-400/80 tracking-widest uppercase mb-8">
+        <p className="text-xs text-[#64748B] tracking-widest uppercase font-semibold mb-8">
           FPGA & Embedded Hardware Core v2.6
         </p>
 
         {/* Progress Bar Container */}
-        <div className="w-full max-w-xs sm:max-w-md bg-slate-900/80 border border-white/10 rounded-xl p-4 backdrop-blur-lg shadow-2xl relative">
-          <div className="flex items-center justify-between text-xs text-slate-400 mb-2">
-            <span className="flex items-center gap-1.5 text-cyan-400 font-mono">
-              <Terminal className="w-3.5 h-3.5" />
+        <div className="w-full max-w-xs sm:max-w-md bg-white border border-[#CBD5E1] rounded-xl p-4 shadow-card relative">
+          <div className="flex items-center justify-between text-xs text-[#334155] mb-2 font-semibold">
+            <span className="flex items-center gap-1.5 text-[#0F172A] font-mono font-bold">
+              <Terminal className="w-3.5 h-3.5 text-[#0F766E]" />
               {statusText}
             </span>
-            <span className="font-bold text-white font-mono">{progress}%</span>
+            <span className="font-bold text-[#0F172A] font-mono">{progress}%</span>
           </div>
 
-          <div className="w-full h-2 bg-slate-800 rounded-full overflow-hidden relative">
+          <div className="w-full h-2 bg-[#F1F5F9] border border-[#CBD5E1] rounded-full overflow-hidden relative">
             <motion.div
-              className="h-full bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-500 rounded-full"
+              className="h-full bg-[#0F766E] rounded-full"
               style={{ width: `${progress}%` }}
               transition={{ ease: 'easeOut' }}
             />
           </div>
 
-          <div className="mt-3 flex justify-between items-center text-[10px] text-slate-500 font-mono">
+          <div className="mt-3 flex justify-between items-center text-[10px] text-[#64748B] font-mono font-semibold">
             <span>SDMCET / VTU DIGITAL LAB</span>
-            <span className="flex items-center gap-1 text-emerald-400">
-              <Zap className="w-3 h-3 inline" /> 60 FPS RTL ENGINE
+            <span className="flex items-center gap-1 text-[#0F766E] font-bold">
+              <Zap className="w-3 h-3 inline text-[#0F766E]" /> 60 FPS RTL ENGINE
             </span>
           </div>
         </div>
