@@ -4,16 +4,34 @@
 
 @layer base {
   :root {
-    --bg-dark: #050816;
-    --cyan-glow: #00F0FF;
-    --purple-glow: #8B5CF6;
+    --background: #F8FAFC;
+    --background-secondary: #F1F5F9;
+    --surface: #FFFFFF;
+
+    --foreground: #0F172A;
+    --foreground-secondary: #334155;
+    --foreground-muted: #64748B;
+
+    --border: #E2E8F0;
+    --divider: #CBD5E1;
+
+    --accent: #0F766E;
+    --accent-hover: #0D9488;
+
+    --icon: #334155;
+    --project-number: #94A3B8;
   }
 
   body {
-    background-color: var(--bg-dark);
-    color: #f1f5f9;
+    background-color: var(--background);
+    color: var(--foreground);
     font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
     overflow-x: hidden;
+  }
+
+  ::selection {
+    background-color: #0F766E;
+    color: #FFFFFF;
   }
 }
 
@@ -23,87 +41,65 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #050816;
+  background: #F8FAFC;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.15);
+  background: #CBD5E1;
   border-radius: 9999px;
-  border: 2px solid #050816;
+  border: 2px solid #F8FAFC;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(6, 182, 212, 0.5);
+  background: #0F766E;
 }
 
-/* Custom Glassmorphism Utility Classes */
+/* Card Surfaces - High Contrast Crisp Cards */
 .glass-panel {
-  background: rgba(15, 23, 42, 0.6);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px 0 rgba(15, 23, 42, 0.05);
 }
 
 .glass-panel-interactive {
-  background: rgba(15, 23, 42, 0.5);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px 0 rgba(15, 23, 42, 0.05);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .glass-panel-interactive:hover {
-  border-color: rgba(6, 182, 212, 0.4);
-  box-shadow: 0 0 25px rgba(6, 182, 212, 0.2), 0 8px 32px 0 rgba(0, 0, 0, 0.5);
-  transform: translateY(-3px);
+  border-color: #0F766E;
+  box-shadow: 0 6px 20px 0 rgba(15, 23, 42, 0.08);
+  transform: translateY(-2px);
 }
 
-.text-gradient-cyan {
-  background: linear-gradient(135deg, #ffffff 0%, #22d3ee 50%, #3b82f6 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.text-gradient-purple {
-  background: linear-gradient(135deg, #ffffff 0%, #a855f7 50%, #3b82f6 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.text-gradient-gold {
-  background: linear-gradient(135deg, #ffffff 0%, #fbbf24 50%, #f59e0b 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-/* Glowing Border Beam Effect */
-.glow-box-cyan {
+/* Subtle Border Accent Effect */
+.glow-box-accent {
   position: relative;
 }
 
-.glow-box-cyan::before {
+.glow-box-accent::before {
   content: '';
   position: absolute;
   inset: -1px;
-  background: linear-gradient(90deg, #00f0ff, #3b82f6, #8b5cf6, #00f0ff);
+  background: #E2E8F0;
   border-radius: inherit;
   z-index: -1;
-  opacity: 0;
-  transition: opacity 0.4s ease;
-  background-size: 300% 300%;
-  animation: shimmer 4s linear infinite;
+  opacity: 1;
+  transition: background 0.3s ease;
 }
 
-.glow-box-cyan:hover::before {
-  opacity: 0.7;
+.glow-box-accent:hover::before {
+  background: #0F766E;
 }
 
-/* Background Cyber Grid */
+/* Subtle Grid Pattern */
 .bg-grid-pattern {
   background-size: 40px 40px;
   background-image: 
-    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    linear-gradient(to right, rgba(15, 23, 42, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(15, 23, 42, 0.04) 1px, transparent 1px);
 }
