@@ -16,23 +16,23 @@ export const ViewResumeModal: React.FC<ViewResumeModalProps> = ({ isOpen, onClos
 
   return (
     <AnimatePresence>
-      <div className="fixed inset-0 z-[10000] flex items-center justify-center p-4 sm:p-6 bg-black/80 backdrop-blur-md">
+      <div className="fixed inset-0 z-[10000] flex items-center justify-center p-4 sm:p-6 bg-black/40 backdrop-blur-md">
         <motion.div
           initial={{ opacity: 0, scale: 0.95, y: 20 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.95, y: 20 }}
           transition={{ duration: 0.3 }}
-          className="relative w-full max-w-5xl h-[88vh] bg-[#0b1026] border border-cyan-500/40 rounded-3xl p-6 shadow-[0_0_60px_rgba(6,182,212,0.3)] flex flex-col justify-between"
+          className="relative w-full max-w-5xl h-[88vh] bg-white border border-[#CBD5E1] rounded-3xl p-6 shadow-2xl flex flex-col justify-between"
         >
           {/* Resume Modal Header */}
-          <div className="flex items-center justify-between pb-4 border-b border-white/10">
+          <div className="flex items-center justify-between pb-4 border-b border-[#CBD5E1]">
             <div className="flex items-center gap-3">
-              <div className="w-12 h-12 rounded-2xl bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 flex items-center justify-center shrink-0">
-                <FileText className="w-6 h-6" />
+              <div className="w-12 h-12 rounded-2xl bg-[#F1F5F9] border border-[#CBD5E1] text-[#0F766E] flex items-center justify-center shrink-0 shadow-2xs">
+                <FileText className="w-6 h-6 text-[#0F766E]" />
               </div>
               <div>
-                <h2 className="text-xl font-bold font-display text-white">{personalInfo.name} — Curriculum Vitae</h2>
-                <p className="text-xs font-mono text-cyan-400">Official Resume Document</p>
+                <h2 className="text-xl font-bold font-display text-[#0F172A]">{personalInfo.name} — Curriculum Vitae</h2>
+                <p className="text-xs font-mono font-bold text-[#0F766E]">Official Resume Document</p>
               </div>
             </div>
 
@@ -41,13 +41,13 @@ export const ViewResumeModal: React.FC<ViewResumeModalProps> = ({ isOpen, onClos
                 href={pdfUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="px-3.5 py-1.5 rounded-xl bg-slate-900 border border-white/10 text-cyan-400 hover:text-cyan-300 text-xs font-mono flex items-center gap-1.5"
+                className="px-3.5 py-1.5 rounded-xl bg-white border border-[#CBD5E1] text-[#0F172A] hover:text-[#0F766E] hover:border-[#0F766E] text-xs font-mono font-bold flex items-center gap-1.5 shadow-2xs"
               >
                 <ExternalLink className="w-3.5 h-3.5" /> Open Full Screen
               </a>
               <button
                 onClick={onClose}
-                className="p-2 rounded-full bg-slate-900 text-slate-400 hover:text-white border border-white/10 transition-colors"
+                className="p-2 rounded-full bg-[#F1F5F9] border border-[#CBD5E1] text-[#334155] hover:text-[#0F172A] transition-colors"
               >
                 <X className="w-5 h-5" />
               </button>
@@ -55,20 +55,20 @@ export const ViewResumeModal: React.FC<ViewResumeModalProps> = ({ isOpen, onClos
           </div>
 
           {/* Real Embedded PDF Document Viewer */}
-          <div className="flex-1 my-4 rounded-2xl bg-slate-950 border border-white/10 overflow-hidden relative">
+          <div className="flex-1 my-4 rounded-2xl bg-white border border-[#CBD5E1] overflow-hidden relative shadow-sm">
             <iframe
               src={`${pdfUrl}#toolbar=0&navpanes=0`}
               title={`${personalInfo.name} Resume PDF`}
-              className="w-full h-full border-0"
+              className="w-full h-full border-0 bg-white"
             />
           </div>
 
           {/* Footer */}
           <div className="pt-2 flex items-center justify-between">
-            <span className="text-xs font-mono text-slate-400">Official Verified Resume Document</span>
+            <span className="text-xs font-mono text-[#64748B] font-semibold">Official Verified Resume Document</span>
             <button
               onClick={onClose}
-              className="px-6 py-2.5 rounded-xl bg-cyan-500 text-slate-950 font-bold text-xs hover:bg-cyan-400 transition-all"
+              className="px-6 py-2.5 rounded-xl bg-[#0F172A] text-white font-bold text-xs hover:bg-[#334155] transition-all shadow-xs"
             >
               Close View
             </button>
